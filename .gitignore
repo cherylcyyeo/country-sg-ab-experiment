@@ -1,0 +1,57 @@
+# sandboxing folder
+tmp/
+
+# Airflow logs
+/logs/*
+!/logs/.gitkeep
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*$py.class
+
+# PyCharm/IDE and VirtualEnv
+.idea
+.venv
+.vscode
+.python-version
+*.iml
+
+#Ipython Notebook
+.ipynb_checkpoints
+
+# Local files
+.DS_Store
+*.swp
+
+# GitBook files
+_book/
+
+/data
+/data-v2
+node_modules/
+
+venv/
+
+.envrc
+0001-local-setup.patch
+Pipfile
+Pipfile.lock
+
+dags/*/data_quality/great_expectations/uncommitted/
+dags/*/data_quality/great_expectations/notebooks/
+dags/*/data_quality/great_expectations/expectations/
+
+/plugins/dwh_import_catalog/log/
+/plugins/dwh_import_catalog/catalog/*
+!/plugins/dwh_import_catalog/catalog/.gitkeep
+
+# DBT artifacts
+/dbt_target
+
+# Ignore generated credentials from google-github-actions/auth
+gha-creds-*.json
+
+# Add .ini files
+*.ini
