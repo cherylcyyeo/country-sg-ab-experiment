@@ -146,6 +146,6 @@ LEFT JOIN discounts ON pd_orders.uuid = discounts.uuid
 LEFT JOIN subscriptions ON pd_orders.uuid = subscriptions.uuid
 
 WHERE country_code = 'sg'
-AND test_name = 'SG_20221104_R_BD_R_LovedBrandsAFVTiered'
-AND variant IN ('Control', 'Variation1', 'Variation2', 'Variation3')
-AND target_group IS NOT NULL
+  AND test_name = 'SG_20221104_R_BD_R_LovedBrandsAFVTiered'
+  AND variant IN ('Control', 'Variation1', 'Variation2', 'Variation3')
+  AND target_group IS NOT NULL
