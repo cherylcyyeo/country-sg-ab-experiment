@@ -86,7 +86,7 @@ order_level AS (
     platform_order_code AS order_code,
     order_report_date,
     date_local,
-    order_hour AS hour_,
+    EXTRACT(HOUR FROM order_report_time) AS hour_,
     CASE WHEN EXTRACT(HOUR FROM order_report_time) IN (7, 8, 9, 10) THEN "Breakfast"
     WHEN EXTRACT(HOUR FROM order_report_time) IN (11, 12, 13) THEN "Lunch"
     WHEN EXTRACT(HOUR FROM order_report_time) IN (14, 15, 16) THEN "Teabreak"
@@ -158,5 +158,5 @@ order_level AS (
 )
 
 SELECT *,
-  CASE WHEN has_surge = TRUE AND (surge_event IS NOT NULL OR surge_event != 'no_surge') THEN TRUE ELSE FALSE END AS has_surge_fee,
+  CASE WHEN has_surge = TRUE AND (surge_event IS NOT NULL AND surge_event != 'no_surge') THEN TRUE ELSE FALSE END AS has_surge_fee,
 FROM order_level
