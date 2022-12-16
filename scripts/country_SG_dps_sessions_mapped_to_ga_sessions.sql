@@ -10,7 +10,7 @@ WITH raw_sessions AS (
     events.vendor_code,
     CASE 
       WHEN dps_zone.name IN ('Jurongwest', 'Bukitpanjang', 'Woodlands', 'Yishun', 'Sengkang') THEN 'Tier_1'
-      WHEN dps_zone.name IN ('Far_east', 'Ang Mo Kio', 'Serangoon', 'Jurong east') THEN 'Tier_2'
+      WHEN dps_zone.name IN ('Far_east', 'Amk', 'Serangoon', 'Jurong east') THEN 'Tier_2'
       WHEN dps_zone.name IN ('Geylang', 'Bedok') THEN 'Tier_3'
       WHEN dps_zone.name IN ('Bukit timah', 'Sg_south') THEN 'Tier_4'
     END AS zone_tier,
